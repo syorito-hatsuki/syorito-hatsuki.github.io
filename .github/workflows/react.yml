@@ -3,6 +3,9 @@ name: React Build
 on:
   pull_request:
     branches: [ "master" ]
+  push:
+    branches: ["master"]
+  
     
 env:
   CI: false
