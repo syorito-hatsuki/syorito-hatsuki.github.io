@@ -20,7 +20,7 @@ export default function ModrinthPage() {
     }, [])
 
     return (
-        <Grid container spacing={2} justifyContent="flex-start">
+        <Grid container spacing={2} justifyContent="center">
             {projects.map((data, index) => (
                 <Grid xs={8} sm={6} md={4} xl={2} key={index}>
                     <Card>
