@@ -1,21 +1,23 @@
-import Toolbar from "@mui/material/Toolbar";
-import Divider from "@mui/material/Divider";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import {GitHub} from "@mui/icons-material";
-import ListItemText from "@mui/material/ListItemText";
 import ModrinthIcon from "../icons/Modrinth";
-import * as React from "react";
 import {Link} from "react-router-dom";
-import {Typography} from "@mui/material";
+import {
+    Box,
+    Divider,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Toolbar,
+    Typography
+} from "@mui/material";
 import {linkStyle, titleStyle} from "./css/sideDrawerStyle";
 import {applicationTitle} from "../../index";
 
 export default function SideDrawer() {
     return (
-        <div>
+        <>
             <Toolbar style={titleStyle}>
                 <Typography variant="h4">{applicationTitle}</Typography>
             </Toolbar>
@@ -42,6 +44,12 @@ export default function SideDrawer() {
                     </ListItem>
                 </Link>
             </List>
-        </div>
+            <Box marginTop="auto" paddingBottom={2}>
+                <Typography variant="body2" textAlign="center">
+                    Powered by <a style={{textDecoration: "none"}} href="https://reactjs.org">React</a> + <a
+                    style={{textDecoration: "none"}} href="https://mui.com">MUI</a>
+                </Typography>
+            </Box>
+        </>
     );
 }
