@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Grid from "@mui/material/Unstable_Grid2";
-import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
+import {Card, CardActionArea, CardContent, Divider, Stack, Typography} from "@mui/material";
 import {ModVersion} from "./components/ModVersion";
 import {textLimit} from "../../css/textStyles";
+import {DownloadOutlined} from "@mui/icons-material";
+import {CounterWithIcon} from "../../components/CounterWithIcon";
+import Heart from "../../components/icons/Heart";
 
 export default function ModrinthPage() {
 
@@ -28,6 +31,15 @@ export default function ModrinthPage() {
                                             style={textLimit}>{data["title"]}</Typography>
                                 <Typography variant="body2" color="text.secondary"
                                             style={textLimit}>{data["description"]}</Typography>
+                            </CardContent>
+                            <Divider/>
+                            <CardContent>
+                                <Stack direction="row"
+                                       justifyContent="flex-start"
+                                       alignItems="center">
+                                    <CounterWithIcon count={data['downloads']} icon={<DownloadOutlined/>}/>
+                                    <CounterWithIcon count={data['followers']} icon={<Heart/>}/>
+                                </Stack>
                             </CardContent>
                         </CardActionArea>
                     </Card>
