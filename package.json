@@ -3,6 +3,7 @@
   "version": "2022.10.1",
   "private": true,
   "type": "module",
+  "homepage": "https://syorito-hatsuki.github.io",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
