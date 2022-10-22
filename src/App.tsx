@@ -1,26 +1,63 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import SideDrawer from "./components/drawer/SideDrawer";
+import {Route, Routes} from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import GitHubPage from "./pages/github/GitHubPage";
+import ModrinthPage from "./pages/modrinth/ModrinthPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import {Typography} from "@mui/material";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const drawerWidth = 240;
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    return (
+        <Box sx={{display: 'flex'}}>
+            <CssBaseline/>
+            <AppBar position="fixed" sx={{width: {sm: `calc(100% - ${drawerWidth}px)`}, ml: {sm: `${drawerWidth}px`}}}>
+                <Toolbar sx={{mr: 2, display: {sm: 'none'}}}>
+                    <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={() => setMobileOpen(!mobileOpen)}>
+                        <MenuIcon/>
+                    </IconButton>
+                        <Typography width="100%" align="center" variant="h6">fStudioHub</Typography>
+                </Toolbar>
+            </AppBar>
+            <Box component="nav" sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}>
+                <Drawer container={window.document.body} variant="temporary" open={mobileOpen}
+                        onClose={() => setMobileOpen(!mobileOpen)}
+                        ModalProps={{
+                            keepMounted: true,
+                        }}
+                        sx={{
+                            display: {xs: 'block', sm: 'none'},
+                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                        }}>
+                    <SideDrawer/>
+                </Drawer>
+                <Drawer variant="permanent" sx={{
+                    display: {xs: 'none', sm: 'block'},
+                    '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                }} open>
+                    <SideDrawer/>
+                </Drawer>
+            </Box>
+
+            <Box component="main" sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}>
+                <Toolbar sx={{mr: 2, display: {sm: 'none'}}}/>
+                <Routes>
+                    <Route index element={<MainPage/>}/>
+                    <Route path="/github" element={<GitHubPage/>}/>
+                    <Route path="/modrinth" element={<ModrinthPage/>}/>
+                    <Route path="*" element={<NotFoundPage/>}/>
+                </Routes>
+            </Box>
+        </Box>
+    );
 }
-
-export default App;
