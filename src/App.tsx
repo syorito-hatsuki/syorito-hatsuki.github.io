@@ -23,10 +23,11 @@ export default function App() {
             <CssBaseline/>
             <AppBar position="fixed" sx={{width: {sm: `calc(100% - ${drawerWidth}px)`}, ml: {sm: `${drawerWidth}px`}}}>
                 <Toolbar sx={{mr: 2, display: {sm: 'none'}}}>
-                    <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={() => setMobileOpen(!mobileOpen)}>
+                    <IconButton color="inherit" aria-label="open drawer" edge="start"
+                                onClick={() => setMobileOpen(!mobileOpen)}>
                         <MenuIcon/>
                     </IconButton>
-                        <Typography width="100%" align="center" variant="h6">fStudioHub</Typography>
+                    <Typography width="100%" align="center" variant="h6">fStudioHub</Typography>
                 </Toolbar>
             </AppBar>
             <Box component="nav" sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}>
