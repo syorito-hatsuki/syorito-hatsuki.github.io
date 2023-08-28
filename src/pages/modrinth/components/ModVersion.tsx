@@ -6,7 +6,7 @@ export function ModVersion(props: {
     slug: string
 }) {
     const [text, setText] = useState("")
-    const {data, status, error} = useProjectVersion(props.slug)
+    const {data, status} = useProjectVersion(props.slug)
 
     if (status === "error") setText("Version unavailable")
     if (status === "success") setText(data[0].version_number)
