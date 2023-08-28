@@ -1,7 +1,7 @@
 {
   "name": "hatsuhub",
   "version": "2022.10.1",
-  "private": true,
+  "private": false,
   "type": "module",
   "homepage": "https://syorito-hatsuki.github.io",
   "dependencies": {
