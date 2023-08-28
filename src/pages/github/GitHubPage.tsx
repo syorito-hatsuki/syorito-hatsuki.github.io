@@ -1,12 +1,11 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import {Card, CardActionArea, CardContent, Stack, Typography} from "@mui/material";
+import {Card, CardActionArea, CardContent, CircularProgress, Stack, Typography} from "@mui/material";
 import {textLimit} from "../../css/textStyles";
 import {GithubDescription} from "./components/GithubDescription";
 import {CounterWithIcon} from "../../components/CounterWithIcon";
 import {ErrorOutline, StarOutline} from "@mui/icons-material";
 import Fork from "../../components/icons/Fork";
 import {useRepositories} from "../../services/github/repository";
-import {CircularProgress} from "material-ui";
 
 export default function GitHubPage() {
 

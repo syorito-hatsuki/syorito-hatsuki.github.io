@@ -1,12 +1,11 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import {Card, CardActionArea, CardContent, Divider, Stack, Typography} from "@mui/material";
+import {Card, CardActionArea, CardContent, CircularProgress, Divider, Stack, Typography} from "@mui/material";
 import {ModVersion} from "./components/ModVersion";
 import {textLimit} from "../../css/textStyles";
 import {DownloadOutlined} from "@mui/icons-material";
 import {CounterWithIcon} from "../../components/CounterWithIcon";
 import Heart from "../../components/icons/Heart";
 import {useUserProjects} from "../../services/modrinth/user";
-import {CircularProgress} from "material-ui";
 
 export default function ModrinthPage() {
 
