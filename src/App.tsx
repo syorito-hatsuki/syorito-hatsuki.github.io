@@ -7,11 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import SideDrawer from "./components/drawer/SideDrawer";
-import {Route, Routes} from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import GitHubPage from "./pages/github/GitHubPage";
-import ModrinthPage from "./pages/modrinth/ModrinthPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import {Outlet} from "react-router-dom";
 import {Typography} from "@mui/material";
 
 export default function App() {
@@ -52,12 +48,7 @@ export default function App() {
 
             <Box component="main" sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}>
                 <Toolbar sx={{mr: 2, display: {sm: 'none'}}}/>
-                <Routes>
-                    <Route index element={<MainPage/>}/>
-                    <Route path="/github" element={<GitHubPage/>}/>
-                    <Route path="/modrinth" element={<ModrinthPage/>}/>
-                    <Route path="*" element={<NotFoundPage/>}/>
-                </Routes>
+                <Outlet/>
             </Box>
         </Box>
     );
