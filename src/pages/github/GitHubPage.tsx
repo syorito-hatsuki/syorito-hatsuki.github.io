@@ -5,14 +5,23 @@ import {CounterWithIcon} from "../../components/CounterWithIcon";
 import {ErrorOutline, StarOutline} from "@mui/icons-material";
 import Fork from "../../components/icons/Fork";
 import {useRepositories} from "../../services/github/repository";
+import {CenteredContainer} from "../../components/CenteredContainer";
 
 export default function GitHubPage() {
 
     const {data, status, error} = useRepositories("syorito-hatsuki")
 
-    if (status === "error") return <Typography>{error?.message}</Typography>
+    if (status === "error") return (
+        <CenteredContainer>
+            <Typography>{error?.message}</Typography>
+        </CenteredContainer>
+    )
 
-    if (status === "loading") return <CircularProgress/>
+    if (status === "loading") return (
+        <CenteredContainer>
+            <CircularProgress/>
+        </CenteredContainer>
+    )
 
     return (
         <Grid container spacing={2} justifyContent="center">

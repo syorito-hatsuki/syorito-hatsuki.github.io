@@ -5,14 +5,23 @@ import {DownloadOutlined} from "@mui/icons-material";
 import {CounterWithIcon} from "../../components/CounterWithIcon";
 import Heart from "../../components/icons/Heart";
 import {useUserProjects} from "../../services/modrinth/user";
+import {CenteredContainer} from "../../components/CenteredContainer";
 
 export default function ModrinthPage() {
 
     const {data, status, error} = useUserProjects("syorito-hatsuki")
 
-    if (status === "error") return <Typography>{error?.message}</Typography>
+    if (status === "error") return (
+        <CenteredContainer>
+            <Typography>{error?.message}</Typography>
+        </CenteredContainer>
+    )
 
-    if (status === "loading") return <CircularProgress/>
+    if (status === "loading") return (
+        <CenteredContainer>
+            <CircularProgress/>
+        </CenteredContainer>
+    )
 
     return (
         <Grid container spacing={2} justifyContent="center">
