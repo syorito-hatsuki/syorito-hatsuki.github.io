@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import {Card, CardActionArea, CardContent, CircularProgress, Stack, Typography} from "@mui/material";
-import {textLimit} from "../../css/textStyles";
 import {GithubDescription} from "./components/GithubDescription";
 import {CounterWithIcon} from "../../components/CounterWithIcon";
 import {ErrorOutline, StarOutline} from "@mui/icons-material";
@@ -23,8 +22,8 @@ export default function GitHubPage() {
                         <CardActionArea href={data.html_url}>
                             <CardContent>
                                 <Typography style={{float: 'right'}} variant={"body2"}>{data.language}</Typography>
-                                <Typography gutterBottom paddingRight={2} variant="h5"
-                                            style={textLimit}>{data.name}</Typography>
+                                <Typography gutterBottom paddingRight={2} variant="h5" textOverflow='ellipsis'
+                                            overflow='hidden' whiteSpace='nowrap'>{data.name}</Typography>
                                 <GithubDescription content={data.description}/>
                             </CardContent>
                             <CardContent>

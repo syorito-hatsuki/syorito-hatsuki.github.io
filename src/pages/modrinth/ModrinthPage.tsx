@@ -1,7 +1,6 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import {Card, CardActionArea, CardContent, CircularProgress, Divider, Stack, Typography} from "@mui/material";
 import {ModVersion} from "./components/ModVersion";
-import {textLimit} from "../../css/textStyles";
 import {DownloadOutlined} from "@mui/icons-material";
 import {CounterWithIcon} from "../../components/CounterWithIcon";
 import Heart from "../../components/icons/Heart";
@@ -23,10 +22,10 @@ export default function ModrinthPage() {
                         <CardActionArea href={`https://modrinth.com/mod/${data.slug}`}>
                             <CardContent>
                                 <ModVersion slug={data.slug}/>
-                                <Typography gutterBottom paddingRight={2} variant="h5"
-                                            style={textLimit}>{data.title}</Typography>
-                                <Typography variant="body2" color="text.secondary"
-                                            style={textLimit}>{data.description}</Typography>
+                                <Typography gutterBottom paddingRight={2} variant="h5" textOverflow='ellipsis'
+                                            overflow='hidden' whiteSpace='nowrap'>{data.title}</Typography>
+                                <Typography variant="body2" color="text.secondary" textOverflow='ellipsis'
+                                            overflow='hidden' whiteSpace='nowrap'>{data.description}</Typography>
                             </CardContent>
                             <Divider/>
                             <CardContent>
