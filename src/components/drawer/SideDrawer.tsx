@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {
     Box,
     Divider,
+    Link as MuiLink,
     List,
     ListItem,
     ListItemButton,
@@ -12,42 +13,37 @@ import {
     Toolbar,
     Typography
 } from "@mui/material";
-import {linkStyle, titleStyle} from "./css/sideDrawerStyle";
 import {applicationTitle} from "../../index";
 
 export default function SideDrawer() {
     return (
         <>
-            <Toolbar style={titleStyle}>
+            <Toolbar style={{justifyContent: 'center'}}>
                 <Typography variant="h4">{applicationTitle}</Typography>
             </Toolbar>
             <Divider/>
             <List>
-                <Link to="/github" style={linkStyle}>
-                    <ListItem key="Github" disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <GitHub/>
-                            </ListItemIcon>
-                            <ListItemText primary="Github"/>
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-                <Link to="/modrinth" style={linkStyle}>
-                    <ListItem key="Modrinth" disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <ModrinthIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Modrinth"/>
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
+                <ListItem key="Github" disablePadding>
+                    <ListItemButton component={Link} to="/github">
+                        <ListItemIcon>
+                            <GitHub/>
+                        </ListItemIcon>
+                        <ListItemText primary="Github"/>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem key="Modrinth" disablePadding>
+                    <ListItemButton component={Link} to="/modrinth">
+                        <ListItemIcon>
+                            <ModrinthIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Modrinth"/>
+                    </ListItemButton>
+                </ListItem>
             </List>
             <Box marginTop="auto" paddingBottom={2}>
                 <Typography variant="body2" textAlign="center">
-                    Powered by <a style={{textDecoration: "none"}} href="https://reactjs.org">React</a> + <a
-                    style={{textDecoration: "none"}} href="https://mui.com">MUI</a>
+                    Powered by <MuiLink underline='none' href="https://reactjs.org">React</MuiLink> + <MuiLink
+                    underline='none' href="https://mui.com">MUI</MuiLink>
                 </Typography>
             </Box>
         </>
