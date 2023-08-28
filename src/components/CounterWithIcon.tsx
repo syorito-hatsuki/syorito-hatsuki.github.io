@@ -1,7 +1,10 @@
-import {ComponentProps} from "react";
+import {ReactElement} from "react";
 import {Box, Typography} from "@mui/material";
 
-export function CounterWithIcon(props: ComponentProps<any>) {
+export function CounterWithIcon(props: {
+    count: number
+    icon: ReactElement
+}) {
     return (
         <Box>
             {props.icon}
