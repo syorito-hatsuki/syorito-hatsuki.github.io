@@ -1,12 +1,15 @@
-import {Link, Typography, Box} from "@mui/material";
+import {Link, Typography} from "@mui/material";
 import React from "react";
 import {applicationTitle} from "../index";
+import {CenteredContainer} from "../components/CenteredContainer";
 
 export default function MainPage() {
     return (
-        <Box textAlign="center">
-            <Typography variant="h1">{applicationTitle}</Typography>
-            <Typography variant="h5">Developed by <Link href="https://github.com/syorito-hatsuki">Syorito Hatsuki</Link></Typography>
-        </Box>
+        <CenteredContainer>
+            <Typography variant="h1" textAlign="center">{applicationTitle}</Typography>
+            <Typography variant="h5" textAlign="center">
+                Developed by <Link underline='none' href="https://github.com/syorito-hatsuki">Syorito Hatsuki</Link>
+            </Typography>
+        </CenteredContainer>
     )
 }
