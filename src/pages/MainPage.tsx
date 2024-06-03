@@ -1,5 +1,4 @@
 import {Link, Typography} from "@mui/material";
-import React from "react";
 import {applicationTitle} from "../index";
 import {CenteredContainer} from "../components/CenteredContainer";
 

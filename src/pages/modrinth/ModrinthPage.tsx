@@ -17,7 +17,7 @@ export default function ModrinthPage() {
         </CenteredContainer>
     )
 
-    if (status === "loading") return (
+    if (status === "pending") return (
         <CenteredContainer>
             <CircularProgress/>
         </CenteredContainer>

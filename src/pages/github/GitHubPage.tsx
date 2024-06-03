@@ -17,7 +17,7 @@ export default function GitHubPage() {
         </CenteredContainer>
     )
 
-    if (status === "loading") return (
+    if (status === "pending") return (
         <CenteredContainer>
             <CircularProgress/>
         </CenteredContainer>

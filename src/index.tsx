@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -11,9 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 export const applicationTitle = 'hatsuHub'
 const client = new QueryClient()
 
-ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
     <QueryClientProvider client={client}>
         <BrowserRouter>
             <Routes>
